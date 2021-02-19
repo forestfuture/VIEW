@@ -1,3 +1,32 @@
+// header animation
+window.addEventListener("load", function(){
+    let headerTitle = document.getElementById("headerTitle");
+    function fadeIn(){
+        headerTitle.style.transition = "5s";
+        headerTitle.style.opacity = 1;
+        headerTitle.style.top = "150px";   
+    }
+    fadeIn();
+    function fadeOut() {
+        headerTitle.style.opacity = 0;
+        headerTitle.style.top = "300px";
+    }
+    setTimeout(fadeOut,4000);
+    function reset(){
+        headerTitle.style.transition = "0s";
+        headerTitle.style.top = "0px";
+    }
+    setTimeout(reset,10000);
+    function loop(){
+        fadeIn(); 
+        setTimeout(fadeOut,4000); 
+        setTimeout(reset,10000);
+    }
+    setInterval(loop,11000);
+});
+
+
+
 // scrollEvent
 let imgSelect = document.getElementsByClassName("imgSelect");
 let showImg = document.getElementsByClassName("showImg");

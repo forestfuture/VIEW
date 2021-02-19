@@ -12,7 +12,6 @@
 
     <!--<link rel="stylesheet" href="style.css">-->
     <style>
-   
         .imgScroll::-webkit-scrollbar {
             display:none;
         }
@@ -24,13 +23,20 @@
             background-size:cover;
             color:rgba(250, 250, 250, 0.726);
         }
-        
+        .imgBg{
+            background-color:rgba(0, 0, 0, 0.349);
+            background-image: url("images\flame.png");
+        }
+        .imgScroll{
+            scroll-snap-type:x;
+        }
         .imgSelect img{
             height:50px;
             width:50px; 
         }
         .showImg{
             position:relative;
+            scroll-snap-align:start;
         }
         .showImg p{
             position:absolute;
@@ -74,33 +80,34 @@
 <div class="scroll d-none" style="position:fixed">0</div>
 <div class="scroll d-none" style="position:fixed; left:20px;">0</div>
 <header>
-<div>
-    <h1 class="font-weight-bold text-center" style="font-size:100px; position:relative; top:150px;">景色!!</h1>
-</div>
+    <h1 id="headerTitle" class="font-weight-bold text-center" style="font-size:125px; position:relative; top:0px; opacity:0; transition:5s;">景色!!</h1>
 </header>
 
 
 <main>
 <div id="afternoon" class="py-2">
-    <h2 class="m-5 font-weight-bold">昼の部</h2>    
-    <div class="imgScroll d-flex overflow-auto mx-auto py-3" style="scroll-snap-type:x;">
-        <div id="img1" class="showImg " style="scroll-snap-align:start;">
-            <img src="images/blueSky.jpg">
-            <p class="font-weight-bold">晴天の時に取った写真。目によさそう</p>
-        </div>
-        <div id="img2" class="showImg " style="scroll-snap-align:start;">
-            <img src="images/forest.jpg">
-            <p class="font-weight-bold">森林公園の写真。広い</p>
-        </div>
-        <div id="img3" class="showImg " style="scroll-snap-align:start;">
-            <img src="images/sea.jpg">
-            <p class="font-weight-bold">どっかの海。寒かった</p>
-        </div>
-        <div id="img4" class="showImg " style="scroll-snap-align:start;">
-            <img src="images/silentHill.jpg">
-            <p class="font-weight-bold">サイレントヒル</p>
-        </div>
-    </div>
+    <h2 class="m-5 font-weight-bold">昼の部</h2>
+    <div class="imgBg">
+        <div class="imgScroll d-flex overflow-auto mx-auto py-3">
+            <div id="img1" class="showImg">
+                <img src="images/blueSky.jpg">
+                <p class="font-weight-bold">晴天の時に取った写真。目によさそう</p>
+            </div>
+            <div id="img2" class="showImg">
+                <img src="images/forest.jpg">
+                <p class="font-weight-bold">森林公園の写真。広い</p>
+            </div>
+            <div id="img3" class="showImg">
+                <img src="images/sea.jpg">
+                <p class="font-weight-bold">どっかの海。寒かった</p>
+            </div>
+            <div id="img4" class="showImg">
+                <img src="images/silentHill.jpg">
+                <p class="font-weight-bold">サイレントヒル</p>
+            </div>
+        </div>    
+    </div>    
+    
     <div class="d-flex overflow-auto justify-content-center">
         <a href="#img1" class="imgSelect bg-dark p-1 mx-3">
             <img src="images/blueSky.jpg">
@@ -117,29 +124,32 @@
     </div>
 </div>
 <div id="night" class="py-2">
-    <h2 class="p-5 text-white font-weight-bold">夜の部</h2>    
-    <div class="imgScroll d-flex overflow-auto mx-auto py-3" style="scroll-snap-type:x;">
-        <div id="img5" class="showImg" style="scroll-snap-align:start;">
-            <img src="images\car.jpg">
-            <p class="text-white font-weight-bold">歩道橋から撮った</p>
-        </div>
-        <div id="img6" class="showImg " style="scroll-snap-align:start;">
-            <img src="images\moon.jpg">
-            <p class="text-white font-weight-bold">月が以上にでかい時に撮った写真</p>
-        </div>
-        <div id="img7" class="showImg " style="scroll-snap-align:start;">
-            <img src="images\redSky.jpg">
-            <p class="text-white font-weight-bold">空綺麗</p>
-        </div>
-        <div id="img8" class="showImg " style="scroll-snap-align:start;">
-            <img src="images\train.jpg">
-            <p class="text-white font-weight-bold">臨場感</p>
-        </div>
-        <div id="img9" class="showImg " style="scroll-snap-align:start;">
-            <img src="images\tree.jpg">
-            <p class="text-white font-weight-bold">もちもちの木</p>
-        </div>
+    <h2 class="p-5 text-white font-weight-bold">夜の部</h2>
+    <div class="imgBg">
+        <div class="imgScroll d-flex overflow-auto mx-auto py-3">
+            <div id="img5" class="showImg">
+                <img src="images\car.jpg">
+                <p class="text-white font-weight-bold">歩道橋から撮った</p>
+            </div>
+            <div id="img6" class="showImg">
+                <img src="images\moon.jpg">
+                <p class="text-white font-weight-bold">月が以上にでかい時に撮った写真</p>
+            </div>
+            <div id="img7" class="showImg">
+                <img src="images\redSky.jpg">
+                <p class="text-white font-weight-bold">空綺麗</p>
+            </div>
+            <div id="img8" class="showImg">
+                <img src="images\train.jpg">
+                <p class="text-white font-weight-bold">臨場感</p>
+            </div>
+            <div id="img9" class="showImg">
+                <img src="images\tree.jpg">
+                <p class="text-white font-weight-bold">もちもちの木</p>
+            </div>
+        </div>    
     </div>
+    
     <div class="d-flex overflow-auto justify-content-center">
         <a href="#img5" class="imgSelect img-thumbnail mx-3">
             <img src="images\car.jpg">
