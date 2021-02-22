@@ -34,12 +34,10 @@ window.addEventListener("load", function(){
     let imgScroll = document.getElementsByClassName("imgScroll");
     for(var i = 0; i < showImg.length; i++){
             let rect = showImg[i].clientWidth;
-            console.log(rect);
         imgScroll[0].onscroll = function(){
             var $scrollLeft = imgScroll[0].scrollLeft;
             document.getElementsByClassName("scroll")[0].innerHTML = $scrollLeft;
             
-        
             if($scrollLeft < (rect/2)){
                 imgSelect[0].classList.add("bg-dark");
                 imgSelect[1].classList.remove("bg-dark");
@@ -67,58 +65,76 @@ window.addEventListener("load", function(){
             var $scrollLeft = imgScroll[1].scrollLeft;
             document.getElementsByClassName("scroll")[1].innerHTML = $scrollLeft;
             if($scrollLeft < (rect/2)){
-                imgSelect[4].classList.add("SelectBorder");
-                imgSelect[5].classList.remove("SelectBorder");
-                imgSelect[6].classList.remove("SelectBorder");
-                imgSelect[7].classList.remove("SelectBorder");
-                imgSelect[8].classList.remove("SelectBorder");
+                imgSelect[4].classList.add("SelectBg");
+                imgSelect[5].classList.remove("SelectBg");
+                imgSelect[6].classList.remove("SelectBg");
+                imgSelect[7].classList.remove("SelectBg");
+                imgSelect[8].classList.remove("SelectBg");
             }else if($scrollLeft > (rect/2) && $scrollLeft < (rect/2)+rect){
-                imgSelect[4].classList.remove("SelectBorder");
-                imgSelect[5].classList.add("SelectBorder");
-                imgSelect[6].classList.remove("SelectBorder");
-                imgSelect[7].classList.remove("SelectBorder");
-                imgSelect[8].classList.remove("SelectBorder");
+                imgSelect[4].classList.remove("SelectBg");
+                imgSelect[5].classList.add("SelectBg");
+                imgSelect[6].classList.remove("SelectBg");
+                imgSelect[7].classList.remove("SelectBg");
+                imgSelect[8].classList.remove("SelectBg");
             }else if($scrollLeft > (rect/2)+rect && $scrollLeft < (rect/2)+(rect*2)){
-                imgSelect[4].classList.remove("SelectBorder");
-                imgSelect[5].classList.remove("SelectBorder");
-                imgSelect[6].classList.add("SelectBorder");
-                imgSelect[7].classList.remove("SelectBorder");
-                imgSelect[8].classList.remove("SelectBorder");
+                imgSelect[4].classList.remove("SelectBg");
+                imgSelect[5].classList.remove("SelectBg");
+                imgSelect[6].classList.add("SelectBg");
+                imgSelect[7].classList.remove("SelectBg");
+                imgSelect[8].classList.remove("SelectBg");
             }else if($scrollLeft > (rect/2)+(rect*2) && $scrollLeft < (rect/2)+(rect*3)){
-                imgSelect[4].classList.remove("SelectBorder");
-                imgSelect[5].classList.remove("SelectBorder");
-                imgSelect[6].classList.remove("SelectBorder");
-                imgSelect[7].classList.add("SelectBorder");
-                imgSelect[8].classList.remove("SelectBorder");
+                imgSelect[4].classList.remove("SelectBg");
+                imgSelect[5].classList.remove("SelectBg");
+                imgSelect[6].classList.remove("SelectBg");
+                imgSelect[7].classList.add("SelectBg");
+                imgSelect[8].classList.remove("SelectBg");
             }else if($scrollLeft > (rect/2)+(rect*3)){
-                imgSelect[4].classList.remove("SelectBorder");
-                imgSelect[5].classList.remove("SelectBorder");
-                imgSelect[6].classList.remove("SelectBorder");
-                imgSelect[7].classList.remove("SelectBorder");
-                imgSelect[8].classList.add("SelectBorder");
+                imgSelect[4].classList.remove("SelectBg");
+                imgSelect[5].classList.remove("SelectBg");
+                imgSelect[6].classList.remove("SelectBg");
+                imgSelect[7].classList.remove("SelectBg");
+                imgSelect[8].classList.add("SelectBg");
             }
         } 
     };    
 });
 
 
-// clickEvent
+// clickScrollEvent
+let imgScroll1 = document.getElementById("imgScroll1");
+let imgScroll2 = document.getElementById("imgScroll2");
+let imgScroll = document.getElementsByClassName("imgScroll");
+for(var s = 0; s < imgScroll.length; s++){
 
-// for(var i = 0; i < showImg.length; i++){
-//     let rect = showImg.clientWidth;
-//     console.log(rect);
-// }
+    // console.log(imgScroll[s].children);    
+
+    for(var i = 0; i < imgSelect.length; i++){
+        btnAction(imgSelect[i],i);
+    }
+
+    function btnAction(imgSelectDOM,imgSelectId){
+
+        imgSelectDOM.addEventListener("click", function(){
+            if(imgSelectId < 4){
+                imgScroll[0].children[imgSelectId].scrollIntoView
+                (
+                    {
+                        behavior:"smooth",
+                    }
+                );    
+            }
+            else if(imgSelectId >= 4){
+                imgScroll[1].children[imgSelectId - 4].scrollIntoView
+                (
+                    {
+                        behavior:"smooth",
+                    }
+                ); 
+            }
+        });
+    };
+}
 
 
-//     for(var a = 0; a < imgSelect.length; a++){
-//         btnAction(imgSelect[a],a);
-//     }
-
-
-//     function btnAction(imgSelectDOM,imgSelectId){   
-//         imgSelectDOM.addEventListener("click", function(){
-//             console.log(showImg[imgSelectId].getBoundingClientRect().left);
-//         })
-//     }
 
 
