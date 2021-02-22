@@ -26,7 +26,6 @@ window.addEventListener("load", function(){
 });
 
 
-
 // scrollEvent
 let imgSelect = document.getElementsByClassName("imgSelect");
 let showImg = document.getElementsByClassName("showImg");
@@ -68,35 +67,35 @@ window.addEventListener("load", function(){
             var $scrollLeft = imgScroll[1].scrollLeft;
             document.getElementsByClassName("scroll")[1].innerHTML = $scrollLeft;
             if($scrollLeft < (rect/2)){
-                imgSelect[4].classList.add("img-thumbnail");
-                imgSelect[5].classList.remove("img-thumbnail");
-                imgSelect[6].classList.remove("img-thumbnail");
-                imgSelect[7].classList.remove("img-thumbnail");
-                imgSelect[8].classList.remove("img-thumbnail");
+                imgSelect[4].classList.add("SelectBorder");
+                imgSelect[5].classList.remove("SelectBorder");
+                imgSelect[6].classList.remove("SelectBorder");
+                imgSelect[7].classList.remove("SelectBorder");
+                imgSelect[8].classList.remove("SelectBorder");
             }else if($scrollLeft > (rect/2) && $scrollLeft < (rect/2)+rect){
-                imgSelect[4].classList.remove("img-thumbnail");
-                imgSelect[5].classList.add("img-thumbnail");
-                imgSelect[6].classList.remove("img-thumbnail");
-                imgSelect[7].classList.remove("img-thumbnail");
-                imgSelect[8].classList.remove("img-thumbnail");
+                imgSelect[4].classList.remove("SelectBorder");
+                imgSelect[5].classList.add("SelectBorder");
+                imgSelect[6].classList.remove("SelectBorder");
+                imgSelect[7].classList.remove("SelectBorder");
+                imgSelect[8].classList.remove("SelectBorder");
             }else if($scrollLeft > (rect/2)+rect && $scrollLeft < (rect/2)+(rect*2)){
-                imgSelect[4].classList.remove("img-thumbnail");
-                imgSelect[5].classList.remove("img-thumbnail");
-                imgSelect[6].classList.add("img-thumbnail");
-                imgSelect[7].classList.remove("img-thumbnail");
-                imgSelect[8].classList.remove("img-thumbnail");
+                imgSelect[4].classList.remove("SelectBorder");
+                imgSelect[5].classList.remove("SelectBorder");
+                imgSelect[6].classList.add("SelectBorder");
+                imgSelect[7].classList.remove("SelectBorder");
+                imgSelect[8].classList.remove("SelectBorder");
             }else if($scrollLeft > (rect/2)+(rect*2) && $scrollLeft < (rect/2)+(rect*3)){
-                imgSelect[4].classList.remove("img-thumbnail");
-                imgSelect[5].classList.remove("img-thumbnail");
-                imgSelect[6].classList.remove("img-thumbnail");
-                imgSelect[7].classList.add("img-thumbnail");
-                imgSelect[8].classList.remove("img-thumbnail");
+                imgSelect[4].classList.remove("SelectBorder");
+                imgSelect[5].classList.remove("SelectBorder");
+                imgSelect[6].classList.remove("SelectBorder");
+                imgSelect[7].classList.add("SelectBorder");
+                imgSelect[8].classList.remove("SelectBorder");
             }else if($scrollLeft > (rect/2)+(rect*3)){
-                imgSelect[4].classList.remove("img-thumbnail");
-                imgSelect[5].classList.remove("img-thumbnail");
-                imgSelect[6].classList.remove("img-thumbnail");
-                imgSelect[7].classList.remove("img-thumbnail");
-                imgSelect[8].classList.add("img-thumbnail");
+                imgSelect[4].classList.remove("SelectBorder");
+                imgSelect[5].classList.remove("SelectBorder");
+                imgSelect[6].classList.remove("SelectBorder");
+                imgSelect[7].classList.remove("SelectBorder");
+                imgSelect[8].classList.add("SelectBorder");
             }
         } 
     };    

@@ -12,9 +12,7 @@
 
     <!--<link rel="stylesheet" href="style.css">-->
     <style>
-        .imgScroll::-webkit-scrollbar {
-            display:none;
-        }
+        
         header{
             background-image: url("images/blueSky.jpg");
             background-repeat:no-repeat;
@@ -23,18 +21,19 @@
             background-size:cover;
             color:rgba(250, 250, 250, 0.726);
         }
+        
         .imgBg{
+            margin:5px auto;
+            max-width:1030px;
             background-image: url("images/flame.png");
+            background-repeat:no-repeat;
             background-size:cover;
-        }
-        #afternoon .imgBg{
-            background-color:rgba(0, 0, 0, 0.651);
-        }
-        #night .imgBg{
-            background-color:rgba(255, 255, 255, 0.651);
         }
         .imgScroll{
             scroll-snap-type:x;
+        }
+        .imgScroll::-webkit-scrollbar {
+            display:none;
         }
         .imgSelect img{
             height:50px;
@@ -52,30 +51,32 @@
         #afternoon .showImg img{
             height:350px;
             width:374px;
-            background-color: rgba(3, 3, 3, 0.76);
+            background-color: rgb(0, 0, 0);
             padding:10px;
         }
         #night{
-            background:rgba(0, 0, 0, 0.726);
+            background:rgba(0, 0, 0, 0.774);
         }
         #night .showImg img{
             height:350px;
             width:374px;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(199, 199, 199);
             padding:10px;
+        }
+        #night .SelectBorder{
+            border:solid 5px rgb(199, 199, 199);
         }
         @media (min-width:483px){
             .imgScroll{
-                width:480px;
+                width:510px;
             }
-            
             #afternoon .showImg img{
-                height:480px;
-                width:480px;                
+                height:510px;
+                width:510px;                
             } 
             #night .showImg img{
-                height:480px;
-                width:480px;
+                height:510px;
+                width:510px;
             }  
         }
         
@@ -94,7 +95,7 @@
 <div id="afternoon" class="py-2">
     <h2 class="m-5 font-weight-bold">昼の部</h2>
     <div class="imgBg">
-        <div class="imgScroll d-flex overflow-auto mx-auto py-3">
+        <div class="imgScroll d-flex overflow-auto mx-auto">
             <div id="img1" class="showImg">
                 <img src="images/blueSky.jpg">
                 <p class="font-weight-bold">晴天の時に取った写真。目によさそう</p>
@@ -113,7 +114,6 @@
             </div>
         </div>    
     </div>    
-    
     <div class="d-flex overflow-auto justify-content-center">
         <a href="#img1" class="imgSelect bg-dark p-1 mx-3">
             <img src="images/blueSky.jpg">
@@ -132,14 +132,14 @@
 <div id="night" class="py-2">
     <h2 class="p-5 text-white font-weight-bold">夜の部</h2>
     <div class="imgBg">
-        <div class="imgScroll d-flex overflow-auto mx-auto py-3">
+        <div class="imgScroll d-flex overflow-auto mx-auto">
             <div id="img5" class="showImg">
                 <img src="images\car.jpg">
                 <p class="text-white font-weight-bold">歩道橋から撮った</p>
             </div>
             <div id="img6" class="showImg">
                 <img src="images\moon.jpg">
-                <p class="text-white font-weight-bold">月が以上にでかい時に撮った写真</p>
+                <p class="text-white font-weight-bold">月が異常にでかい時に撮った写真</p>
             </div>
             <div id="img7" class="showImg">
                 <img src="images\redSky.jpg">
@@ -157,7 +157,7 @@
     </div>
     
     <div class="d-flex overflow-auto justify-content-center">
-        <a href="#img5" class="imgSelect img-thumbnail mx-3">
+        <a href="#img5" class="imgSelect SelectBorder mx-3">
             <img src="images\car.jpg">
         </a>
         <a href="#img6" class="imgSelect mx-3">
